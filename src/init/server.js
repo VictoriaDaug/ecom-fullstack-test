@@ -1,5 +1,6 @@
 import React from 'react';
 import path from 'path';
+import { Provider } from 'react-redux';
 import express from 'express';
 import compression from 'compression';
 import staticAsset from 'static-asset';
@@ -9,6 +10,7 @@ import nodeJsx from 'node-jsx';
 import { match, RouterContext } from 'react-router';
 import { renderToString } from 'react-dom/server';
 
+import createStore from '../views/store';
 import api from '../api';
 import routes from '../routes';
 
@@ -73,6 +75,7 @@ api(app);
  * Handle status codes and direct all other paths to react-router.
  * */
 app.get('*', (req, res) => {
+    const store = createStore();
     match({ routes: routes, location: req.url }, (error, redirect, props) => {
         if (error) {
             res.status(500).send(error.message);
@@ -80,7 +83,7 @@ app.get('*', (req, res) => {
             res.redirect(302, redirect.pathname + redirect.search);
         } else if (props) {
             res.status(200);
-            res.render('index', { reactOutput: renderToString(<RouterContext {...props} />) });
+            res.render('index', { reactOutput: renderToString(<Provider store={ store }><RouterContext {...props} /></Provider>) });
         }
     });
 });

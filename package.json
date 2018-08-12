@@ -62,7 +62,10 @@
     "node-jsx": "^0.13.3",
     "offline-plugin": "^4.6.1",
     "react": "^15.6.1",
+    "react-redux": "^5.0.7",
     "react-router": "^3.0.2",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
     "static-asset": "^0.6.0"
   },
   "devDependencies": {
