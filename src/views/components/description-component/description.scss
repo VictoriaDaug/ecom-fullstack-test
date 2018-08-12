@@ -1,0 +1,20 @@
+.description {
+  &-title {
+    font-size: $fontLarge;
+    padding: 7% 0 10% 0;
+  }
+  &-text {
+    font-size: 2rem;
+    font-weight: 300;;
+    min-height: 11rem;
+  }
+  &-price {
+    padding: 8% 0 8% 0;
+    font-size: $fontMid;
+    font-weight: 300;
+    &_num {
+      font-size: $fontLarge;
+      font-weight: 700;
+      margin-left: 1rem;}
+  }
+}
