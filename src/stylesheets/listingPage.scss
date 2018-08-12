@@ -1,4 +1,7 @@
-body {
-    background-color: #FFFFFF;
-    color: #888888;
-}
+@import "mixins";
+@import "base";
+@import "variables";
+@import "../views/components/button-component/button.scss";
+@import "../views/components/description-component/description.scss";
+@import "../views/components/picture-component/picture.scss";
+@import "../views/components/product-component/product.scss";
