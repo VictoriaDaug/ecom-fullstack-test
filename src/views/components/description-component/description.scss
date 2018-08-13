@@ -2,11 +2,12 @@
   &-title {
     font-size: $fontLarge;
     padding: 7% 0 10% 0;
+    min-height: 10rem;
   }
   &-text {
     font-size: 2rem;
     font-weight: 300;;
-    min-height: 11rem;
+    min-height: 12rem;
   }
   &-price {
     padding: 8% 0 8% 0;
